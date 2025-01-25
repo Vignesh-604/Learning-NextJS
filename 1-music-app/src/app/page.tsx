@@ -1,9 +1,11 @@
 import HeroSection from "@/components/HeroSection";
+import FeaturedCourses from "@/components/FeaturedCourses";
 
 export default function Home() {
 	return (
-		<h1 className="bg-black/[0.9] min-h-screen flex  justify-center bg-grid-white/[0.02]">
+		<div className="bg-black/[0.9] min-h-screen bg-grid-white/[0.02]">
 			<HeroSection />
-		</h1>
+			<FeaturedCourses />
+		</div>
 	);
 }
