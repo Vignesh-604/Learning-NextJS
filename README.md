@@ -7,9 +7,11 @@
 - Customize import alias :- No  
 
 ## Folder structure
-- **layout.tsx:** Describes the layout of a folder. Each folder has a layout page but only the root layout will require MetaData.
-- **page.tsx:** Content that is served
-- Layout (root file) takes children (page.tsx)
+- **/app:** Folders created in this are considered as routes (ex. contact, courses)
+    - **layout.tsx:** Describes the layout of a folder. Each folder has a layout page but only the root layout will require MetaData.
+    - **page.tsx:** Content that is served
+    - > [! NOTE] Layout (root file) takes children (page.tsx)
+    - **/api:** Used to write backend (ex. /login/route.ts)
 
 ---
 ## Notes
