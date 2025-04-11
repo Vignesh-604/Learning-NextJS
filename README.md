@@ -21,3 +21,15 @@
 - Follow the installation and dependencies as required (lib/utils.ts)
 - Copy paste the ui component into the given components/ui folder
 - Copy Paste required code into component file
+
+## NextJS works on edge
+Next.js on the edge means running your application closer to the end user—on servers located around the world. This approach, often called "edge computing," helps deliver your content faster by reducing the distance data has to travel.
+
+## NextRequest & NextResponse — What are they?
+These are Next.js-specific wrappers around the standard Web API Request and Response objects, tailored for the App Router and Edge/Serverless environments.
+
+- **NextRequest** is used instead of Express-like req. It's like the Request object from the Fetch API.
+    - Use .json(), .headers, .url, .cookies, etc.
+
+- **NextResponse** is used to return a response — just like res.send() or res.json() in Express.
+    - Use .json(), .redirect(), .next(), .rewrite().

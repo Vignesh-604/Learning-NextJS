@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export async function connect() {
+export default async function connect() {
     try {
         mongoose.connect(process.env.MONGO_URL!)    // ! specifies that value won't be null or undefined
 
