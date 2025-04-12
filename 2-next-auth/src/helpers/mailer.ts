@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 // connect() not required because function is being called from a file that already called connect() (ex. signup)
 const sendEmail = async ({ email, emailType, userId }: any) => {
 	try {
-		const hashedToken = bcrypt.hash(userId.toString(), 10)			// creating a token for verification
+		const hashedToken = await bcrypt.hash(userId.toString(), 10)			// creating a token for verification
 
 		if (emailType === "VERIFY") {
 			await User.findByIdAndUpdate(userId, {
@@ -21,7 +21,7 @@ const sendEmail = async ({ email, emailType, userId }: any) => {
 		// Copied from mailtrap.io node integration
 		var transport = nodemailer.createTransport({
 			host: process.env.HOST || "smtp.mailtrap.io",		// TS will throw error because type is not defined
-			port: Number(process.env.PORT) || 2525,				// Declare each as variable with type or create an interface or give fallbacks
+			port: Number(process.env.EPORT) || 2525,			// Declare each as variable with type or create an interface or give fallbacks
 			auth: {
 				user: process.env.USER || "",   // fallback to empty string to avoid undefined
 				pass: process.env.PASS || ""
@@ -39,6 +39,7 @@ const sendEmail = async ({ email, emailType, userId }: any) => {
 		}
 
 		const response = await transport.sendMail(mailOptions)
+		return(response)
 
 	} catch (error: any) {
 		throw new Error(error.message)

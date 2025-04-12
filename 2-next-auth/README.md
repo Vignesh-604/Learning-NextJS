@@ -18,3 +18,6 @@ Authentication, reset passwords, emails, etc
 - Added emailType check in nodemailer
 - Create account on [mailtrap](https://mailtrap.io/) -> Inboxes -> Integration -> node.js -> copy the credentials
     - Created HTML page to redirect and verify
+- Tested using postman (small env error)
+> [! NOTE]
+> Don't use bcrypt to hash userid to create tokens because it has special characers ($ . %) that get encoded (ex. space -> %20) so it's better to hash using some other module like uuid.

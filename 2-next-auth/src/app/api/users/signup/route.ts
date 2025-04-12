@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
         // No middlewares required like in express
         const reqBody = await request.json()            // the request body is a promise
         const {username, email, password} = reqBody
-        console.log(reqBody)        // validation
         
         const user = await User.findOne({email})
         if (user) {
@@ -22,10 +21,10 @@ export async function POST(request: NextRequest) {
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)        // encrypting password
 
-        const newUser = new User({username, email, hashedPassword})     // creating new user object
+        const newUser = new User({username, email, password:hashedPassword})     // creating new user object
 
         const savedUser = await newUser.save()                          // User.create() will work too
-
+        
         // send verification mail
         await sendEmail({email, emailType: "VERIFY", userId: savedUser._id})
 
