@@ -19,5 +19,9 @@ Authentication, reset passwords, emails, etc
 - Create account on [mailtrap](https://mailtrap.io/) -> Inboxes -> Integration -> node.js -> copy the credentials
     - Created HTML page to redirect and verify
 - Tested using postman (small env error)
-> [! NOTE]
-> Don't use bcrypt to hash userid to create tokens because it has special characers ($ . %) that get encoded (ex. space -> %20) so it's better to hash using some other module like uuid.
+> [! NOTE]  
+> - Don't use bcrypt to hash userid to create tokens because it has special characers ($ . %) that get encoded (ex. space -> %20) so it's better to hash using some other module like uuid.
+> - Instalation and usage of modules like nodmailer and jwt can cause errors because they need to be download as dev dependency (hover over the export error to get installation code.)
+- Verify route -> Search user with verifyToken and vaid expiry and Verify user
+- Adding login route - checking for user, comparing hashed password, creating token using jwt, using NextResponse to set cookies.  
+- Addin logout -> Unsetting cookies
