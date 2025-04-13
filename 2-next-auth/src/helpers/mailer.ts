@@ -7,6 +7,7 @@ const sendEmail = async ({ email, emailType, userId }: any) => {
 	try {
 		const hashedToken = await bcrypt.hash(userId.toString(), 10)			// creating a token for verification
 
+		// If the update operation is not specified, it's treated as $set
 		if (emailType === "VERIFY") {
 			await User.findByIdAndUpdate(userId, {
 				verifyToken: hashedToken, verifyTokenExpiry: Date.now() + 3600000		// valid for 1 hour from now

@@ -25,3 +25,5 @@ Authentication, reset passwords, emails, etc
 - Verify route -> Search user with verifyToken and vaid expiry and Verify user
 - Adding login route - checking for user, comparing hashed password, creating token using jwt, using NextResponse to set cookies.  
 - Addin logout -> Unsetting cookies
+- Created helper file tokenData to decode jwt token, getUserId and pass it to profile to fetch user data.
+- Tested all routes from signup to logout

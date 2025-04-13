@@ -12,12 +12,12 @@ export async function POST(request: NextRequest) {
         const { email, password } = reqBody
 
         const user = await User.findOne({ email })
-        if (user) {
+        if (!user) {
             return NextResponse.json({ error: "User not found.", status: 404 })
         }
 
         const validPassword = await bcrypt.compare(password, user.password)
-        if (validPassword) {
+        if (!validPassword) {
             return NextResponse.json({error: "Password didn't match", status: 400})
         }
 

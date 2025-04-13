@@ -23,7 +23,6 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json({message: "User verified", status: 200})
         
-        
     } catch (error: any) {
         return NextResponse.json({error: error.message, status: 500})
     }
