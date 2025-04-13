@@ -27,3 +27,5 @@ Authentication, reset passwords, emails, etc
 - Addin logout -> Unsetting cookies
 - Created helper file tokenData to decode jwt token, getUserId and pass it to profile to fetch user data.
 - Tested all routes from signup to logout
+- Created Frontend for signup nad login - axios for api calls and using next router for navigation
+- Verify emial - Fetching token from url and verifying
