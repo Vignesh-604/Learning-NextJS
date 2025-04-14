@@ -33,3 +33,6 @@ These are Next.js-specific wrappers around the standard Web API Request and Resp
 
 - **NextResponse** is used to return a response — just like res.send() or res.json() in Express.
     - Use .json(), .redirect(), .next(), .rewrite().
+
+## ***Middlewares***
+Created under `/src` with name `middleware.ts`.

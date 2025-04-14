@@ -28,4 +28,9 @@ Authentication, reset passwords, emails, etc
 - Created helper file tokenData to decode jwt token, getUserId and pass it to profile to fetch user data.
 - Tested all routes from signup to logout
 - Created Frontend for signup nad login - axios for api calls and using next router for navigation
-- Verify emial - Fetching token from url and verifying
+- Verify email - Fetching token from url and verifying
+- Creating Profile - Login to store cookies then fetch user details in profile page
+- Clicking on Username routes to ***Dynamic Page/Route*** where data from the url is used as param (ex. _id)
+    - Created under the same folder but within [] and name of parameter inside the []
+- ***Middlewares***: Created under `/src` with name `middleware.ts`.
+    - Used to allow or block routes. If token then don't access publicPages (login, signup, etc) and vice versa.
